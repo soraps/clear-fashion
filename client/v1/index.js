@@ -35,6 +35,8 @@ console.log(MY_FAVORITE_BRANDS[0]);
 // I can find on these e-shops
 // 2. Log the variable
 
+const CHEAPEST_TSHIRT='https://www.faguo-store.com/fr/vetements/7606-arcy-t-shirt-en-coton-recycle-kaki.html'
+console.log(CHEAPEST_TSHIRT);
 /**
  * 👕
  * Easy 😁?
@@ -43,34 +45,74 @@ console.log(MY_FAVORITE_BRANDS[0]);
  * The variable is loaded by the file `data.js`
  * 👕
  */
+console.log(marketplace)
 
 // 🎯 TODO 2: Number of products
 // 1. Create a variable and assign it the number of products
 // 2. Log the variable
+const nbOfProducts= marketplace.length;
+console.log(nbOfProducts);
+
 
 // 🎯 TODO 3: Brands name
 // 1. Create a variable and assign it the list of brands name only
 // 2. Log the variable
 // 3. Log how many brands we have
+const nameOfBrand=[]
+for (const product of marketplace){
+  nameOfBrand.push(product.brand);
+}
+console.log(nameOfBrand);
+
+const uniqueNameBrand=[... new Set(nameOfBrand)];
+console.log(uniqueNameBrand);
+console.log(uniqueNameBrand.length);
 
 // 🎯 TODO 4: Sort by price
 // 1. Create a function to sort the marketplace products by price
 // 2. Create a variable and assign it the list of products by price from lowest to highest
 // 3. Log the variable
+function sort_price(tab){
+tab.sort(function compare(a, b) {
+  if (a.price < b.price)
+     return -1;
+
+})
+return tab;
+};
+const marketplace_sorted_price=sort_price(marketplace)
+
+console.log(marketplace_sorted_price)
+
 
 // 🎯 TODO 5: Sort by date
 // 1. Create a function to sort the marketplace objects by products date
 // 2. Create a variable and assign it the list of products by date from recent to old
 // 3. Log the variable
-
+function sort_date(tab){
+  tab.sort(function compare(a, b) {
+    if (a.released < b.released)
+       return -1;
+  
+  })
+  return tab;
+  };
+  const marketplace_sorted_date=sort_date(marketplace)
+  
+  console.log(marketplace_sorted_date)
+  
 // 🎯 TODO 6: Filter a specific price range
 // 1. Filter the list of products between 50€ and 100€
 // 2. Log the list
+const marketplace_filter=marketplace.filter(function(marketplace){
+  return( marketplace.price>50  && marketplace.price<100);
+})
+console.log(marketplace_filter)
 
 // 🎯 TODO 7: Average price
 // 1. Determine the average price of the marketplace
 // 2. Log the average
-
+const avg_price=marketplace;
 /**
  * 🏎
  * We are almost done with the `marketplace` variable
