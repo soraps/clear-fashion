@@ -112,7 +112,12 @@ console.log(marketplace_filter)
 // 🎯 TODO 7: Average price
 // 1. Determine the average price of the marketplace
 // 2. Log the average
-const avg_price=marketplace;
+var avg_price=0;
+for (const products of marketplace){
+  avg_price=avg_price+products.price;
+}
+avg_price=avg_price/nbOfProducts;
+console.log(avg_price);
 /**
  * 🏎
  * We are almost done with the `marketplace` variable
@@ -135,14 +140,56 @@ const avg_price=marketplace;
 //
 // 2. Log the variable
 // 3. Log the number of products by brands
+const l1=[];
+const l2=[];
+const l3=[];
+for (const products of marketplace){
+  if (products.brand==uniqueNameBrand[0]){
+    l1.push(products)
+  }
+}
+for (const products of marketplace){
+  if (products.brand==uniqueNameBrand[1]){
+    l2.push(products)
+  }
+}
 
+for (const products of marketplace){
+  if (products.brand==uniqueNameBrand[2]){
+    l3.push(products)
+  }
+}
+
+const brands={
+  'panafrica': l1,
+  'loom': l2,
+  'hast': l3
+}
+console.log(brands)
 // 🎯 TODO 9: Sort by price for each brand
 // 1. For each brand, sort the products by price, from highest to lowest
 // 2. Log the sort
 
+
+const brands_price={
+  'panafrica': sort_price(l1),
+  'loom': sort_price(l2),
+  'hast': sort_price(l3)
+}
+console.log(brands_price)
+
+
+
 // 🎯 TODO 10: Sort by date for each brand
 // 1. For each brand, sort the products by date, from old to recent
 // 2. Log the sort
+
+const brands_date={
+  'panafrica': sort_date(l1),
+  'loom': sort_date(l2),
+  'hast': sort_date(l3)
+}
+console.log(brands_date)
 
 /**
  * 💶
@@ -154,6 +201,36 @@ const avg_price=marketplace;
 // 🎯 TODO 11: Compute the p90 price value
 // 1. Compute the p90 price value of each brand
 // The p90 value (90th percentile) is the lower value expected to be exceeded in 90% of the products
+
+
+
+
+const s1=[];
+const s2=[];
+const s3=[];
+for (let i=0; i<l1.length; i++){
+  s1.push(sort_price(l1)[i].price);
+}
+
+
+for (let i=0; i<l2.length; i++){
+  s2.push(sort_price(l2)[i].price);
+}
+
+
+for (let i=0; i<l3.length; i++){
+  s3.push(sort_price(l3)[i].price);
+}
+
+const brands_p90={
+  'panafrica': s1[Math.floor(s1.length*90/100)],
+  'loom': s2[Math.floor(s2.length*90/100)],
+  'hast': s3[Math.floor(s3.length*90/100)]
+}
+console.log(brands_p90)
+
+
+
 
 /**
  * 🧥
@@ -346,18 +423,31 @@ const COTELE_PARIS = [
 // 🎯 TODO 1: New released products
 // // 1. Log if we have new products only (true or false)
 // // A new product is a product `released` less than 2 weeks.
+console.log('2023-01-15'<sort_date(COTELE_PARIS)[COTELE_PARIS.length-1].released)
+
 
 // 🎯 TODO 2: Reasonable price
 // // 1. Log if coteleparis is a reasonable price shop (true or false)
 // // A reasonable price if all the products are less than 100€
 
+console.log(100<sort_price(COTELE_PARIS)[COTELE_PARIS.length-1].price)
+
 // 🎯 TODO 3: Find a specific product
 // 1. Find the product with the uuid `2b9a47e3-ed73-52f6-8b91-379e9c8e526c`
 // 2. Log the product
+var finded;
+for (const products of COTELE_PARIS){
+  if (products.uuid=='2b9a47e3-ed73-52f6-8b91-379e9c8e526c'){
+    finded=products;
+  }}
+
+console.log(finded);
 
 // 🎯 TODO 4: Delete a specific product
 // 1. Delete the product with the uuid `2b9a47e3-ed73-52f6-8b91-379e9c8e526c`
 // 2. Log the new list of product
+console.log(COTELE_PARIS.filter(function(value, index, arr){ return value!=finded}))
+
 
 // 🎯 TODO 5: Save the favorite product
 // We declare and assign a variable called `blueJacket`
@@ -380,8 +470,9 @@ let jacket = blueJacket;
 jacket.favorite = true;
 
 // 1. Log `blueJacket` and `jacket` variables
-// 2. What do you notice?
-
+// 2. What do you notice? they both contain a favorite property
+console.log(jacket)
+console.log(blueJacket)
 // we make a new assignment again
 blueJacket = {
   'link':
@@ -397,6 +488,12 @@ blueJacket = {
 
 // 3. Update `jacket` property with `favorite` to true WITHOUT changing blueJacket properties
 
+jacket=JSON.parse(JSON.stringify( blueJacket))
+jacket.favorite = true;
+console.log('jacket:')
+console.log(jacket)
+console.log('blueJacket:')
+console.log(blueJacket)
 /**
  * 🎬
  * The End: last thing to do
@@ -406,3 +503,6 @@ blueJacket = {
 // 🎯 LAST TODO: Save in localStorage
 // 1. Save MY_FAVORITE_BRANDS in the localStorage
 // 2. log the localStorage
+
+localStorage.setItem('MY_FAVORITE_BRANDS', MY_FAVORITE_BRANDS);
+console.log(localStorage)
