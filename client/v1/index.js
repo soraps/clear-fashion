@@ -203,8 +203,6 @@ console.log(brands_date)
 // The p90 value (90th percentile) is the lower value expected to be exceeded in 90% of the products
 
 
-
-
 const s1=[];
 const s2=[];
 const s3=[];
