@@ -1,11 +1,22 @@
 /* eslint-disable no-console, no-process-exit */
 const dedicatedbrand = require('./eshops/dedicatedbrand');
+//https://www.dedicatedbrand.com/en/men/all-men
 
-async function sandbox (eshop = 'https://www.dedicatedbrand.com/en/men/news') {
+const montlimar_brand = require('./eshops/montlimar_brand');
+
+//https://www.montlimart.com/99-vetements
+
+const circlebrand=require('./eshops/circlebrand');
+//https://shop.circlesportswear.com/collections/collection-homme
+
+
+async function sandbox (eshop = 'https://www.dedicatedbrand.com/en/men/all-men') {
   try {
     console.log(`🕵️‍♀️  browsing ${eshop} eshop`);
 
-    const products = await dedicatedbrand.scrape(eshop);
+    //const products = await montlimar_brand.scrapeAndSave(eshop, 'montlimar.json');
+    const products = await dedicatedbrand.scrapeAndSave(eshop,'dedicated.json');
+    //const products = await circlebrand.scrapeAndSave(eshop,'circle.json');
 
     console.log(products);
     console.log('done');
