@@ -34,7 +34,7 @@ const parse = data => {
 
       const image = $(element)
         .find('.motion-reduce')
-        .attr('srcset');
+        .attr('srcset').split(',')[0];
     let date = new Date().toISOString().slice(0, 10);
       return {name, price,link,image,date};
     })
@@ -81,7 +81,7 @@ module.exports.scrape = async url => {
         const data = parse(body);
   
         // Write the data to a JSON file
-        fs.writeFileSync(filename, JSON.stringify(data));
+        fs.writeFileSync(filename, JSON.stringify( data,null , 2));
   
         return true;
       }

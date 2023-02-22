@@ -83,7 +83,7 @@ module.exports.scrape = async url => {
       const data = parse(body);
 
       // Write the data to a JSON file
-      fs.writeFileSync(filename, JSON.stringify(data));
+      fs.writeFileSync(filename, JSON.stringify( data,null , 2));
 
       return true;
     }

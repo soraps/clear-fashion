@@ -11,14 +11,14 @@ const circlebrand=require('./eshops/circlebrand');
 //https://shop.circlesportswear.com/collections/collection-homme
 
 
-async function sandbox (eshop = 'https://www.dedicatedbrand.com/en/loadfilter') {
+async function sandbox (eshop = 'https://shop.circlesportswear.com/collections/all') {
   try {
     console.log(`🕵️‍♀️  browsing ${eshop} eshop`);
 
     //const products = await montlimar_brand.scrapeAndSave(eshop, 'montlimar.json');
     //const products = await dedicatedbrand.scrapeAndSave(eshop,'dedicated.json');
-    //const products = await circlebrand.scrapeAndSave(eshop,'circle.json');
-    const products = await dedicatedbrand.getProducts()
+    const products = await circlebrand.scrapeAndSave(eshop,'circle.json');
+    //const products = await dedicatedbrand.getProducts()
 
     console.log(products);
     console.log('done');
