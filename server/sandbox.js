@@ -11,7 +11,7 @@ const circlebrand=require('./eshops/circlebrand');
 //https://shop.circlesportswear.com/collections/collection-homme
 
 
-async function sandbox (eshop = 'https://shop.circlesportswear.com/collections/all') {
+async function sandbox (eshop = 'https://shop.circlesportswear.com/collections/collection-homme') {
   try {
     console.log(`🕵️‍♀️  browsing ${eshop} eshop`);
 

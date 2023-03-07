@@ -14,6 +14,7 @@ const parse = data => {
 
   return $('.product-grid-container .grid__item')
     .map((i, element) => {
+        const brand='circle';
         const name = $(element)
         .find('.card__heading')
         .text()
@@ -36,7 +37,7 @@ const parse = data => {
         .find('.motion-reduce')
         .attr('srcset').split(',')[0];
     let date = new Date().toISOString().slice(0, 10);
-      return {name, price,link,image,date};
+      return {brand,name, price,link,image,date};
     })
     .get();
 };
@@ -64,6 +65,8 @@ module.exports.scrape = async url => {
       return null;
     }
   };
+
+
   
   /**
    * Scrape all the products for a given url page and save as a JSON file
