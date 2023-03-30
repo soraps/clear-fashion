@@ -2,22 +2,41 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>👕 Clear Fahion | Environmentally & human-friendly clothes</title>
+    <title>👕 Clear Fashion | Environmentally & human-friendly clothes</title>
+    <link rel="stylesheet" href="index.css">
   </head>
+  <header>
+    <div class="header-color"></div>
+    <h1>Clear Fashion</h1>
+  </header>
   <body>
-    <h1>Clear fashion</h1>
-    <section id="options">
+  <body>
+    
+    <section id="options" class="options-section">
       <div id="show">
         <label for="show-select">Show:</label>
         <select name="show" id="show-select">
-          <option value="12">12</option>
-          <option value="24">24</option>
-          <option value="48">48</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="500">500</option>
+          <option value="3000">All</option>
         </select>
       </div>
       <div id="page">
         <label for="page-select">Go to page:</label>
-        <select name="page" id="page-select"> </select>
+        <select name="page" id="page-select"> 
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
       </div>
       <div id="filters">
         <label for="reasonable-price-select">By reasonable price</label>
@@ -30,10 +49,10 @@
           <option value="No">No</option>
           <option value="Yes">Yes</option>
         </select>
-        <label for="favorite-select">By favorite items</label>
+        <label for="favorite-select">Favorites</label>
         <select name="favorite" id="favorite-select">
-          <option value="No">No</option>
-          <option value="Yes">Yes</option>
+          <option value="Don't show">Don't show</option>
+          <option value="Show">Show</option>
         </select>
         <div id="brand">
           <label for="brand-select">By brands:</label>
@@ -50,7 +69,7 @@
         </select>
       </div>
     </section>
-    <section id="indicators">
+    <section id="indicators" class="indicators-section">
       <h2>Indicators</h2>
       <div>
         <span>Number of products</span>
@@ -82,6 +101,8 @@
       </div>
     </section>
     <section id="products"></section>
-    <script type="text/javascript" charset="UTF-8" src="portfolio.js"></script>
+    <div class="product-container">
+      <script type="text/javascript" charset="UTF-8" src="portfolio.js"></script>
+    </div>
   </body>
 </html>

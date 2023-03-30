@@ -80,6 +80,19 @@ app.get('/products/search', async (request, response) => {
   }
 });
 
+app.get('/brands', async (request, response) => {
+  try{
+    const client = await MongoClient.connect(MONGODB_URI, {'useNewUrlParser': true});
+    const db =  client.db(MONGODB_DB_NAME)
+    const collection = db.collection('products');
+    const result = await collection.distinct('brand');
+    response.send({result : result});
+    client.close();
+  } catch(e){
+    response.send({error : "could not retrieve brands"});  
+  }
+})
+
 /*app.get('/products/search', (request, response) => {
   const { limit = 12, brand = 'All_brands', price = 1000 } = request.query;
   const query = {

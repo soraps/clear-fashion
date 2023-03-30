@@ -1,0 +1,131 @@
+body {
+    position: relative;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.les-hirondelles.fr/wp-content/uploads/2020/11/ClearFashion_01.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    opacity: 0.5;
+    z-index: -1; 
+  }
+  header {
+    position: relative;
+  }
+  
+  .header-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fce0c5;
+    z-index: -1; 
+  }
+  
+  h1 {
+    margin: 0;
+    padding: 20px;
+    color: rgb(5, 0, 0);
+    font-size: 24px;
+  }
+  
+  
+    a[href] {
+      color: #be2ed4;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  .options-section {
+    background-color: #e8fbf9;
+    box-shadow: 0px 0px 3px #0B2F3A;
+    box-sizing: border-box;
+    padding: 10px;
+    background-clip: padding-box;
+    height: 140px;
+    margin: 0 auto;
+  }
+  .indicators-section {
+      background-color: #f5c5c5;
+      box-shadow: 0px 0px 5px #00000039;
+      box-sizing: border-box;
+      padding: 10px;
+      background-clip: padding-box;
+      width: 30vw;
+      height: auto;
+      margin: 0 auto;
+      margin-top: 20px;
+  }
+  
+  .product {
+    width: 20%;
+    height: 400px; /* set a fixed height */
+    box-shadow: 0px 0px 5px #00000033;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 1%;
+  }
+  
+  .product-name {
+  font-size: 18px;
+  height: 42px;
+  overflow: hidden;
+  display: block; /* change display property to block */
+  margin-top: 10px; /* add some spacing between brand and product name */
+}
+
+.brand-name {
+  font-size: 16px;
+  height: 22px;
+  overflow: hidden;
+}
+
+.product .image{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 60%;
+  object-fit: contain;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+    .product .details span{
+      display: block;
+      text-align: center;
+      line-height: 1.5;
+    }
+  
+    .add-fav input[type="checkbox"] {
+      display: none;
+    }
+    .add-fav {
+      font-size: 15px;
+      color: #550373;
+      display: block;
+      text-align: center;
+      line-height: 1;
+    }
+    .add-fav input:checked + i {
+      color: rgb(233, 59, 138);
+    }
+    .add-fav i.heart {
+    font-size: 15px;
+      color: #54196f;
+      transition: color 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    
