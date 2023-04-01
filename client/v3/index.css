@@ -45,19 +45,18 @@ body {
   }
   
   
-   
   .options-section {
     background-color: #e8fbf9;
     box-shadow: 0px 0px 3px #0B2F3A;
     box-sizing: border-box;
     padding: 10px;
     background-clip: padding-box;
-    height: 220px;
+    height: auto;
     margin: 0 auto;
     border-radius: 10px;
   }
   .filters-section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 20px;
   }
   
@@ -72,7 +71,7 @@ body {
   }
   
   .filters-section select {
-    width: 100px;
+    width: 120px;
   }
   
   .indicators-section {
@@ -109,7 +108,7 @@ body {
   }
   
   .product-name {
-  font-size: 20px;
+  font-size: 18px;
   height: 42px;
   overflow: hidden;
   display: block; /* change display property to block */
