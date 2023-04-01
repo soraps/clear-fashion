@@ -15,10 +15,15 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:  cover;
-    opacity: 0.5;
+    opacity: 0.7;
     z-index: -1; 
   }
-  header {
+  a[href] {
+    color: #be2ed4;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .header {
     position: relative;
   }
   
@@ -36,34 +41,58 @@ body {
     margin: 0;
     padding: 20px;
     color: rgb(5, 0, 0);
-    font-size: 24px;
+    font-size: 30px;
   }
   
   
-    a[href] {
-      color: #be2ed4;
-      text-decoration: none;
-      cursor: pointer;
-    }
+   
   .options-section {
     background-color: #e8fbf9;
     box-shadow: 0px 0px 3px #0B2F3A;
     box-sizing: border-box;
     padding: 10px;
     background-clip: padding-box;
-    height: 140px;
+    height: 220px;
     margin: 0 auto;
+    border-radius: 10px;
   }
+  .filters-section {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .filters-section div {
+    margin-bottom: 10px;
+  }
+  
+  .filters-section label {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+  }
+  
+  .filters-section select {
+    width: 100px;
+  }
+  
   .indicators-section {
       background-color: #f5c5c5;
-      box-shadow: 0px 0px 5px #00000039;
-      box-sizing: border-box;
+      box-shadow: 0px 0px 3px #0B2F3A;
+      box-sizing: content-box;
       padding: 10px;
       background-clip: padding-box;
-      width: 30vw;
+      width: 50vw;
       height: auto;
       margin: 0 auto;
       margin-top: 20px;
+      border-radius: 10px;
+  }
+  .indicator {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
   }
   
   .product {
@@ -80,7 +109,7 @@ body {
   }
   
   .product-name {
-  font-size: 18px;
+  font-size: 20px;
   height: 42px;
   overflow: hidden;
   display: block; /* change display property to block */
@@ -88,7 +117,7 @@ body {
 }
 
 .brand-name {
-  font-size: 16px;
+  font-size: 18px;
   height: 22px;
   overflow: hidden;
 }
@@ -103,29 +132,28 @@ body {
   margin-top: 10px;
 }
 
-    .product .details span{
-      display: block;
-      text-align: center;
-      line-height: 1.5;
-    }
-  
-    .add-fav input[type="checkbox"] {
-      display: none;
-    }
-    .add-fav {
-      font-size: 15px;
-      color: #550373;
-      display: block;
-      text-align: center;
-      line-height: 1;
-    }
-    .add-fav input:checked + i {
-      color: rgb(233, 59, 138);
-    }
-    .add-fav i.heart {
+.product .details span{
+    display: block;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.add-fav input[type="checkbox"] {
+    display: none;
+}
+.add-fav {
     font-size: 15px;
-      color: #54196f;
-      transition: color 0.2s ease-in-out;
-      cursor: pointer;
-    }
-    
+    color: #550373;
+    display: block;
+    text-align: center;
+    line-height: 1;
+}
+.add-fav input:checked + i {
+    color: rgb(233, 59, 138);
+}
+.add-fav i.heart {
+font-size: 15px;
+    color: #54196f;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+}

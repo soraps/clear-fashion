@@ -2,16 +2,15 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>👕 Clear Fashion | Environmentally & human-friendly clothes</title>
+    <title>👕 Clear Fashion | Environmentally &amp; Human-friendly Clothes</title>
     <link rel="stylesheet" href="index.css">
   </head>
-  <header>
-    <div class="header-color"></div>
-    <h1>Clear Fashion</h1>
-  </header>
   <body>
-  <body>
-    
+    <header>
+      <div class="header-color"></div>
+      <h1>Clear Fashion</h1>
+    </header>
+
     <section id="options" class="options-section">
       <div id="show">
         <label for="show-select">Show:</label>
@@ -38,71 +37,83 @@
           <option value="10">10</option>
         </select>
       </div>
-      <div id="filters">
-        <label for="reasonable-price-select">By reasonable price</label>
-        <select name="reasonable-price" id="reasonable-price-select">
-          <option value="No">No</option>
-          <option value="Yes">Yes</option>
-        </select>
-        <label for="recent-select">By recently released</label>
-        <select name="recent" id="recent-select"> 
-          <option value="No">No</option>
-          <option value="Yes">Yes</option>
-        </select>
-        <label for="favorite-select">Favorites</label>
-        <select name="favorite" id="favorite-select">
-          <option value="Don't show">Don't show</option>
-          <option value="Show">Show</option>
-        </select>
+
+      <section id="filters" class="filters-section">
+        <h2>Filters</h2>
+        <div>
+          <label for="reasonable-price-select">By reasonable price:</label>
+          <select name="reasonable-price" id="reasonable-price-select">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+       
+          <label for="recent-select">By recently released:</label>
+          <select name="recent" id="recent-select"> 
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
         <div id="brand">
           <label for="brand-select">By brands:</label>
           <select name="brand" id="brand-select"> </select>
+          <label for="favorite-select">Favorite:</label>
+          <select name="favorite" id="favorite-select">
+            <option value="Don't show">Don't show</option>
+            <option value="Show">Show</option>
+          </select>
         </div>
-      </div>
-      <div id="sort">
-        <label for="sort-select">Sort:</label>
-        <select name="sort" id="sort-select">
-          <option value="price-asc">Cheaper</option>
-          <option value="price-desc">Expensive</option>
-          <option value="date-asc">Recently released</option>
-          <option value="date-desc">Anciently released</option>
-        </select>
-      </div>
+        <div id="sort">
+          <label for="sort-select">Sort:</label>
+          <select name="sort" id="sort-select">
+            <option value="price-asc">Cheaper</option>
+            <option value="price-desc">Expensive</option>
+            <option value="date-asc">Recently released</option>
+            <option value="date-desc">Anciently released</option>
+          </select>
+        </div>
+      </section>
     </section>
-    <section id="indicators" class="indicators-section">
-      <h2>Indicators</h2>
-      <div>
-        <span>Number of products</span>
+      
+      <section id="indicators" class="indicators-section">
+        <h2>Indicators</h2>
+        <div class="indicator">
+          <span>Number of products:</span>
+          <span id="nbProducts">0</span>
+        
+       
+        <span>Number of products:</span>
         <span id="nbProducts">0</span>
-      </div>
-      <div>
-        <span>Number of brands</span>
+      
+      
+        <span>Number of brands:</span>
         <span id="nbBrands">0</span>
-      </div>
-      <div>
-        <span>Number of new products</span>
+      
+      
+        <span>Number of new products:</span>
         <span id="nbNewProducts">0</span>
       </div>
-      <div>
-        <span>p50 price value</span>
+      <div class="indicator">
+        <span>P50 of price value:</span>
         <span id="p50">0</span>
       </div>
-      <div>
-        <span>p90 price value</span>
+      <div class="indicator">
+        <span>P90 of price value:</span>
         <span id="p90">0</span>
       </div>
-      <div>
-        <span>p95 price value</span>
+      <div class="indicator">
+        <span>P95 of price value:</span>
         <span id="p95">0</span>
       </div>
-      <div>
-        <span>Last released date</span>
-        <span id="latestRelease">2020-01-01</span>
+      <div class="indicator">
+        <span>Last released date:</span>
+        <span id="latestRelease">2023-01-01</span>
       </div>
     </section>
+    
     <section id="products"></section>
     <div class="product-container">
       <script type="text/javascript" charset="UTF-8" src="portfolio.js"></script>
     </div>
   </body>
+  <body>
 </html>
